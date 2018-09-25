@@ -98,18 +98,20 @@ namespace WebApplication1
                     //DataTable datatagble = new DataTable();
                     //DataRow[] datarow = datatagble.Select("Your string");
                     //DataTable dt1 = datarow.CopyToDataTable();
-                    var dtr = new DataTable();
 
+                    var voila = new List<Prescription>();
                     foreach (DataRow dr in dt.Rows)
                     {
+                        var dtr = new DataTable();
+                        dtr = dr.Table.Clone();
                         dtr.ImportRow(dr);
                         jsonObject = JsonConvert.SerializeObject(dtr);
                         jsonObject = jsonObject.Substring(1, jsonObject.Length - 2);
                         JObject.Parse(jsonObject);
-                        finalObject += jsonObject + ",";
+                        //finalObject += jsonObject + ",";
+                         voila.Add(JsonConvert.DeserializeObject<Prescription>(jsonObject));
                     }
                     
-                    var voila = JsonConvert.DeserializeObject<List<Prescription>>(jsonObject);
                     return voila;
                 }
             }

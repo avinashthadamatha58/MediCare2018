@@ -51,7 +51,7 @@ namespace WebApplication1
             return false;
         }
         
-        public Prescription GetPrescriptionfromDatabase(int prescriptionId)
+        public string GetPrescriptionfromDatabase(int prescriptionId)
         {
             string jsonObject = String.Empty;
             var connString1 = new Connection();
@@ -71,13 +71,14 @@ namespace WebApplication1
                     jsonObject = JsonConvert.SerializeObject(dt);
                     jsonObject = jsonObject.Substring(1, jsonObject.Length - 2);
                     JObject.Parse(jsonObject);
-                    var voila = JsonConvert.DeserializeObject<Prescription>(jsonObject);
-                    return voila;
+                    return jsonObject;
+                    //var voila = JsonConvert.DeserializeObject<Prescription>(jsonObject);
+                    //return voila;
                 }
             }
         }
 
-        public List<Prescription> GetAllPrescriptions()
+        public string GetAllPrescriptions()
         {
             string jsonObject = String.Empty;
             string finalObject = string.Empty;
@@ -111,8 +112,8 @@ namespace WebApplication1
                         //finalObject += jsonObject + ",";
                          voila.Add(JsonConvert.DeserializeObject<Prescription>(jsonObject));
                     }
-                    
-                    return voila;
+
+                    return JsonConvert.SerializeObject(voila);
                 }
             }
         }

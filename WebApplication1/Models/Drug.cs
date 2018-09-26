@@ -11,6 +11,6 @@ namespace WebApplication1.Models
         public string DrugName { get; set; }
         public string DrugType { get; set; }
         public string CommonIntake { get; set; }
-        public int Availability { get; set; }
+        public int AvailableNumber { get; set; }
     }
 }

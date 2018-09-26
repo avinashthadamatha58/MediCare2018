@@ -33,21 +33,14 @@ namespace WebApplication1.Tests
         public void GetPrescriptionFromDatabaseTest()
         {
             var po = new PrescriptionOperations();
-            Assert.AreEqual("", po.GetPrescriptionfromDatabase(1));
-        }
-        
-        [Test]
-        public void GetTest()
-        {
-            var po = new TestClass();
-            Assert.AreEqual(true, po.testGetSql());
+            Assert.NotNull(po.GetPrescriptionfromDatabase(1));
         }
 
         [Test]
         public void GetAllPrescriptionsTest()
         {
             var po = new PrescriptionOperations();
-            Assert.AreEqual("", po.GetAllPrescriptions());
+            Assert.NotNull(po.GetAllPrescriptions());
         }
     }
 }

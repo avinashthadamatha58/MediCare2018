@@ -6,8 +6,8 @@ using Android.Support.V7.App;
 
 namespace MyWeather.Droid
 {
-    [Activity(Label = "@string/app_name",
-        Icon = "@mipmap/ic_launcher",
+    [Activity(Label = "Anjanika MediCare",
+        Icon = "@mipmap/launcher",
         Theme = "@style/Theme.SplashTheme",
         MainLauncher = true)]
     public class SplashActivity : AppCompatActivity

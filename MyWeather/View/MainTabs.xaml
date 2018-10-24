@@ -4,15 +4,17 @@
             xmlns:views="clr-namespace:MyWeather.View"
             xmlns:viewmodels="clr-namespace:MyWeather.ViewModels"
              x:Class="MyWeather.View.MainTabs"
-            Title="My Weather"
+            Title="Anjanika Medicare"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:viewModel="clr-namespace:MyWeather.ViewModel;assembly=MyWeather"
             android:TabbedPage.ToolbarPlacement="Bottom">
   <!--Pages can be added as references or inline-->
     <TabbedPage.BindingContext>
-        <viewmodels:WeatherViewModel/>
+        <viewModel:MediCareViewModel/>
     </TabbedPage.BindingContext>
 
     <views:WeatherView/>
     <views:ForecastView/>
+    <views:PrescriptionView/>
 
 </TabbedPage>

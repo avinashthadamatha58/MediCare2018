@@ -2,32 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyWeather.View.WeatherView"
-             Title="Weather">
+             Title="Find">
     <StackLayout Padding="10" Spacing="10">
+        <Label Text="Received message: "></Label>
+        <Label x:Name="lblMsg" Text="nothing yet"></Label>
         <Entry Text="{Binding Location}">
-            <Entry.Triggers>
-                <DataTrigger TargetType="Entry"
-                             Binding="{Binding UseGPS}"
-                             Value="true">
-                    <Setter Property="IsEnabled" Value="false"/>
-                </DataTrigger>
-            </Entry.Triggers>
         </Entry>
 
-        <StackLayout Orientation="Horizontal" Spacing="10">
-            <Label Text="Use GPS" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand"/>
-            <Switch IsToggled="{Binding UseGPS}"/>
-        </StackLayout>
-
-        <StackLayout Orientation="Horizontal" Spacing="10">
-            <Label Text="Use Imperial" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand"/>
-            <Switch IsToggled="{Binding IsImperial}"/>
-        </StackLayout>
-
-
-        <Button Text="Get Weather" Command="{Binding GetWeatherCommand}"/>
-        <Label Text="{Binding Temp}" FontSize="24"/>
-        <Label Text="{Binding Condition}"/>
+        <Button Text="Search Drug" Command="{Binding GetDrugCommand}"/>
+        <Button Text="Search Prescription" Command="{Binding GetPrescriptionCommand}"/>
+        <Label Text="{Binding DrugName}" FontSize="24"/>
+        <Label Text="{Binding DrugType} "/>
         <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"/>
     </StackLayout>
 </ContentPage>

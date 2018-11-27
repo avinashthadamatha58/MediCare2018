@@ -16,6 +16,8 @@ namespace MyWeather
             };
         }
 
+      //  public const string NotificationReceivedKey = "NotificationReceived";
+
         protected override void OnStart()
         {
             base.OnStart();

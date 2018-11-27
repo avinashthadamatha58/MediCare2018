@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Text;
 using System.Web;
 using System.Web.Http;
 using Newtonsoft.Json;
@@ -14,7 +17,6 @@ namespace WebApplication1.Controllers
         {
             DrugOperations drugOperations = new DrugOperations();
             return drugOperations.GetDrugfromDatabase(paramOne);
-            
         }
         public string Get()
         {

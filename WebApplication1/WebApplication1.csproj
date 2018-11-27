@@ -103,12 +103,15 @@
   <ItemGroup>
     <Content Include="AppData\Database2.accdb" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppData\Connection.cs" />
     <Compile Include="Controllers\DrugOperationsController.cs" />
+    <Compile Include="Controllers\HelloApiController.cs" />
     <Compile Include="Controllers\PrescriptionOperationsController.cs" />
     <Compile Include="DrugOperations.cs" />
     <Compile Include="Tests\DrugOperationsTest.cs" />

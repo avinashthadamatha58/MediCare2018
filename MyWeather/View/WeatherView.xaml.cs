@@ -1,8 +1,11 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Net.Http;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace MyWeather.View
 {
@@ -14,7 +17,19 @@ namespace MyWeather.View
 
             if (Device.RuntimePlatform != Device.UWP)
                 Icon = new FileImageSource { File = "pills.png" };
+
+
+            MessagingCenter.Subscribe<object, string>(this, "UpdateLabel", (s, e) =>
+            {
+
+                Device.BeginInvokeOnMainThread(() =>
+                {
+
+                    BackgroundServiceLabel.Text = e;
+                });
+            });
         }
+       
 
         //protected override void OnAppearing()
         //{

@@ -68,6 +68,17 @@ namespace MyWeather.ViewModel
             set { drugList = value; OnPropertyChanged(); }
         }
 
+        //Program pp = new Program();
+
+        //public Drug DrugInfo
+        //{
+        //    get
+        //    {
+        //        pp.TriggerJob();
+        //        return Program.lapaki;
+        //    }
+        //} 
+
         ICommand getDrug;
         public ICommand GetDrugCommand =>
             getDrug ??

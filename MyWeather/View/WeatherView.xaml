@@ -6,6 +6,8 @@
     <StackLayout Padding="10" Spacing="10">
         <Label Text="Received message: "></Label>
         <Label x:Name="lblMsg" Text="nothing yet"></Label>
+        <Label x:Name="BackgroundServiceLabel" 
+               Text="Avinash Thadamatha"/>
         <Entry Text="{Binding Location}">
         </Entry>
 
@@ -13,6 +15,7 @@
         <Button Text="Search Prescription" Command="{Binding GetPrescriptionCommand}"/>
         <Label Text="{Binding DrugName}" FontSize="24"/>
         <Label Text="{Binding DrugType} "/>
+        
         <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"/>
     </StackLayout>
 </ContentPage>

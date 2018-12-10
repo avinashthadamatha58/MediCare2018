@@ -1,15 +1,18 @@
 
 using System;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Plugin.Permissions;
 using Android.Content.PM;
 using Android.Gms.Common;
+using Android.Runtime;
 using Firebase.Auth;
 using Firebase.Iid;
 using Firebase.Messaging;
+using MyWeather.Droid.Services;
 using Plugin.CurrentActivity;
 
 namespace MyWeather.Droid
@@ -33,9 +36,21 @@ namespace MyWeather.Droid
 		
 		    LoadApplication(new App());
 
-		   // IsPlayServicesAvailable();
+            //var intent = new Intent(this, typeof(PeriodicService));
+            //StartService(intent);
 
-		}
+
+            var alarmIntent = new Intent(this, typeof(BackgroundReceiver));
+
+            var pending = PendingIntent.GetBroadcast(this, 0, alarmIntent, PendingIntentFlags.UpdateCurrent);
+
+            var alarmManager = GetSystemService(AlarmService).JavaCast<AlarmManager>();
+            alarmManager.Set(AlarmType.ElapsedRealtime, SystemClock.ElapsedRealtime() + 5 * 1000, pending);
+        //    alarmManager.SetRepeating(AlarmType.ElapsedRealtime, SystemClock.ElapsedRealtime() + 5 * 1000, 5*1000, pending);
+
+            // IsPlayServicesAvailable();
+
+        }
 
         //public bool IsPlayServicesAvailable()
         //{

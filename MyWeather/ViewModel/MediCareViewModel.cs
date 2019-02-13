@@ -6,7 +6,6 @@ using System.Windows.Input;
 using MvvmHelpers;
 using MyWeather.Helpers;
 using MyWeather.Model;
-using MyWeather.Models;
 using MyWeather.Services;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;

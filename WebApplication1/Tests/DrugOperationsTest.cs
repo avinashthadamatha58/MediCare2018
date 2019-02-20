@@ -22,7 +22,7 @@ namespace WebApplication1.Tests
                 AvailableNumber = 30,
                 CommonIntake = "High Fever",
             };
-
+            //test CI
             Assert.AreEqual(true, po.DrugInsertIntoDatabase(drug));
         }
 

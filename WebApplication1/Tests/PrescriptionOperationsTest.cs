@@ -25,7 +25,7 @@ namespace WebApplication1.Tests
                 NoOfDays = 7,
                 Disease = "Fever"
             };
-
+            //checking automation tests
             Assert.AreEqual(true, po.PrescriptionInsertIntoDatabase(prescription));
         }
 
